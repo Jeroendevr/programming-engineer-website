@@ -1,0 +1,15 @@
+name: Build mkdocs
+on: 
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code to workspace
+        uses: actions/checkout@v4
+      - name: MkDocs builder
+        uses: moonpathbg/mkdocs_builder@latest
+            

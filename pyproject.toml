@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "programming engineer website"
+version = "0.2"
+description = "Personal website"
+authors = ["Jeroen de Vries <jeroen@programming-engineer.nl>"]
+license = "BSD"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12"
+mkdocs = "^1.5.3"
+mkdocs-material = "^9.4.3"
+mkdocs-rss-plugin = "^1.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
