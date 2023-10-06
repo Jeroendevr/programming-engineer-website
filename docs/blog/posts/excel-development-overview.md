@@ -9,7 +9,7 @@ date: 2023-02-15
 When working with Excel at some point it becomes easier to do you work with additional tools. While most of the work that is done within excel can be done within a plethora of other application and programming languages it is actively used. Within Europe it has a market share of over 90% in the corporate and governmental environment. No wonder there are some many tools created around microsoft's Excel application. In this article I'll summarize all the tools around Excel for developers and users that involve some kind of programming. And I'll try to group them within distinct categories. 
 
 I'll start listing the technologies as close to Excel as possible and expand outwards.
-
+<!-- more -->
 ## Microsoft Excel
 ### Don't use additional tools 😉
 Perhaps not the first item you would expect but I list this option here as I have fallen into the trap of thinking "Using technology x we can solve this problem easily" and similar thoughts along those lines. When working in a team, make sure the additional learning your colleagues have to do and investment have to make to learn the new tool along with your solution that's created within it. When using it for a one time project or your team agrees upon using other solutions a choice can be made of the technologies listed below. Otherwise you can learn about more advanced built-in functionality like turning tables or look for an existing formula like the [new Lambda function](https://support.microsoft.com/en-us/office/lambda-function-bd212d27-1cd1-4321-a34a-ccbf254b8b67) that perhaps already does what you do. 

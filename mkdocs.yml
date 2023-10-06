@@ -2,7 +2,8 @@ site_name: Programming Engineer
 site_url: https://programming-engineer.nl
 nav:
   - About: index.md
-  - Blog: /blog
+  - Blog: 
+    - blog/index.md
   - Procedure: procedure.md
   - Projects: projects.md
   - Contact: contact.md
@@ -33,6 +34,8 @@ plugins:
   - tags
   - blog:
       post_url_format: "{slug}"
+      blog_dir: blog
+      archive: false
 
 markdown_extensions:
   - footnotes
