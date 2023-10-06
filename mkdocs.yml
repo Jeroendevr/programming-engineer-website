@@ -2,6 +2,7 @@ site_name: Programming Engineer
 site_url: https://programming-engineer.nl
 nav:
   - About: index.md
+  - Blog: /blog
   - Procedure: procedure.md
   - Projects: projects.md
   - Contact: contact.md
