@@ -5,7 +5,7 @@ on:
       - "main"
   workflow_dispatch:
 jobs:
-  upload:
+  Build_Site:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code to workspace
