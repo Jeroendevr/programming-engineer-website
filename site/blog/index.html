@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://programming-engineer.nl/blog/">
       
       
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../procedure/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -206,9 +210,56 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/blog" class="md-nav__link">
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -217,6 +268,15 @@
   
 
       </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -343,67 +403,7 @@
     <h2 id="overview-of-excel-development-tools"><a class="toclink" href="overview-of-excel-development-tools/">Overview of Excel Development tools</a></h2>
 <p>When working with Excel at some point it becomes easier to do you work with additional tools. While most of the work that is done within excel can be done within a plethora of other application and programming languages it is actively used. Within Europe it has a market share of over 90% in the corporate and governmental environment. No wonder there are some many tools created around microsoft's Excel application. In this article I'll summarize all the tools around Excel for developers and users that involve some kind of programming. And I'll try to group them within distinct categories. </p>
 <p>I'll start listing the technologies as close to Excel as possible and expand outwards.</p>
-<h3 id="microsoft-excel"><a class="toclink" href="overview-of-excel-development-tools/#microsoft-excel">Microsoft Excel</a></h3>
-<h4 id="dont-use-additional-tools"><a class="toclink" href="overview-of-excel-development-tools/#dont-use-additional-tools">Don't use additional tools 😉</a></h4>
-<p>Perhaps not the first item you would expect but I list this option here as I have fallen into the trap of thinking "Using technology x we can solve this problem easily" and similar thoughts along those lines. When working in a team, make sure the additional learning your colleagues have to do and investment have to make to learn the new tool along with your solution that's created within it. When using it for a one time project or your team agrees upon using other solutions a choice can be made of the technologies listed below. Otherwise you can learn about more advanced built-in functionality like turning tables or look for an existing formula like the <a href="https://support.microsoft.com/en-us/office/lambda-function-bd212d27-1cd1-4321-a34a-ccbf254b8b67">new Lambda function</a> that perhaps already does what you do. </p>
-<h3 id="vba-visualbasic-for-applications"><a class="toclink" href="overview-of-excel-development-tools/#vba-visualbasic-for-applications">VBA - VisualBasic for Applications</a></h3>
-<p>Perhaps you are familiar with the term Macro or VBA. VBA is a programming language that is provided within Excel. It can be used to automate nearly every interaction. Because it is delivered with Excel it does not require any setup or installation not for developers or for user.  of a workbook book with VBA code in it. Microsoft calls this a Macro enabled workbook. Excel files have the distinct .xlsm (m for macro) instead of the .xlsx extension. Within some strongly regulated corporate environments this VBA usage does not require a ticket through IT. Making it the first step towards automation. 
-See the <a href="https://learn.microsoft.com/en-us/office/vba/">VBA reference</a> for more information.</p>
-<h4 id="extending-the-vba-editor"><a class="toclink" href="overview-of-excel-development-tools/#extending-the-vba-editor">Extending the VBA Editor</a></h4>
-<p>While VBA is still supported it's editor is dated from when VisualBasic 6 was released (from 1998)<sup id="fnref:1"><a class="footnote-ref" href="overview-of-excel-development-tools/#fn:1">1</a></sup>. That's where Rubberduck and MZ-Tools aim to support the developers with add-in. Because it is a tool only meant for developers and not attached to the workbook itself (but the code is) it means when you share the document to users. The underlying VBA code works and no additional configuration is needed. This is a huge benefit in my opinion. </p>
-<h5 id="rubberduck"><a class="toclink" href="overview-of-excel-development-tools/#rubberduck">Rubberduck</a></h5>
-<p>I have used <a href="https://rubberduckvba.com">Rubberduck</a> extensively. Because of its many features like its Code Explorer making it easy to navigate through your classes and functions and the refactoring tool so you can easily rename your variables or functions. Rubberduck is an open-source project.<br />
-<img alt="Code Explorer" src="../img/rd_code-explorer-highlight.png" />
-<img alt="Refactorings" src="../img/rd_refactorings-highlight.png" /></p>
-<h5 id="mz-tools"><a class="toclink" href="overview-of-excel-development-tools/#mz-tools">MZ-Tools</a></h5>
-<p>Within the similar domain is the add-in <a href="https://www.mztools.com">MZ-tools</a>. It provides also a sort of code explorer plus many more. MZ-Tools requires a paid license. 
-<img alt="MZ-Tools" src="../img/mztools8vba_original.png" /></p>
-<h3 id="microsoft-provided-platforms"><a class="toclink" href="overview-of-excel-development-tools/#microsoft-provided-platforms">Microsoft Provided Platforms</a></h3>
-<p>Besides VBA Microsoft provides some additional platforms as can be seen in this graph on the <a href="https://learn.microsoft.com/en-us/office/dev/scripts/resources/add-ins-differences">Office Scripts Page</a>.
-<img alt="Office Platform Overview" src="../img/ms_office-programmability-diagram.png" /></p>
-<h4 id="office-scripts"><a class="toclink" href="overview-of-excel-development-tools/#office-scripts">Office Scripts</a></h4>
-<p><a href="https://learn.microsoft.com/en-us/office/dev/scripts/overview/excel">Office Scripts</a> are not something for the regular home user as it requires a business license. By using JavaScript or TypeScript you can make scripts similar to VBA. One big benefit is to be able to create workflows using PowerAutomate. A example is a workflow where a excel is routinely updated and sends a mail. Without needing user interaction. Another benefit is that because of the underlying JavaScript language and the way it is implemented the scripts are usable from the webversions as well. </p>
-<h4 id="com-addins"><a class="toclink" href="overview-of-excel-development-tools/#com-addins">COM-Addins</a></h4>
-<p>Where Rubberduck and MZ-Tools are COM Add-ins (now developed using the VSTO - Visual Studio Tools for Office). You could create one yourself by using the .NET framework. A frequent used language is the .Net framework is C#. Learn how to create one <a href="https://learn.microsoft.com/en-us/visualstudio/vsto/create-vsto-add-ins-for-office-by-using-visual-studio?view=vs-2022">here</a>. As shown in the graph above, this is mainly meant for developers. In this case a VisualStudio License is needed in order to build the add-in, so a installer can be made to distribute it to the users. Desktop use only.</p>
-<h4 id="web-add-ins"><a class="toclink" href="overview-of-excel-development-tools/#web-add-ins">Web add-ins</a></h4>
-<p>Last one of the quadrant is the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/">Web add-ins</a>. It uses webtechnologies like HTML, CSS and Javascript. Microsoft depicts is as a embedded website within your office application. This Webapplication can then interact with the office application. One of the benefits is that is can run on mobile devices and in the case of a multiple end users provides options for a centralized deployment. </p>
-<p><img alt="Office add-in" src="../img/ms_addins-overview.png" /></p>
-<h3 id="expanding-outwards"><a class="toclink" href="overview-of-excel-development-tools/#expanding-outwards">Expanding outwards</a></h3>
-<p>In the options summarized above we looked at only at the platforms provided by Microsoft itself or enhances the interactions within those platforms. Let's look a little bit further and list the possibilities to automate tasks using different platforms. </p>
-<h3 id="programming-language-specific-tools-and-extensions"><a class="toclink" href="overview-of-excel-development-tools/#programming-language-specific-tools-and-extensions">Programming Language specific tools and extensions</a></h3>
-<p>The selection for this paragraph is based on the idea that the user or the developer still opens en uses Excel to interact with the workbook. Otherwise I could list many more programming languages and platforms because interacting with Excel files is not the same as working with Excel as an application. </p>
-<h4 id="python"><a class="toclink" href="overview-of-excel-development-tools/#python">Python</a></h4>
-<h5 id="xlwings"><a class="toclink" href="overview-of-excel-development-tools/#xlwings">xlwings</a></h5>
-<p>Even with all the tools to make VBA easier some basic programming features may still lack for example easy version control. One way I have dealt with this is the use of xlwings package. Create python functions as you would regularly do in a separate python file and call those functions from within Excel. This benefits me with 
-- version control
-- freedom of editor as I can choose whatever editor supports python
-- extensive use of libraries
-  - Python has a vast ecosystem of packages with data-analysis, plotting, interactive use and machine learning</p>
-<p>When deploying the package for users, a add-in can be generated for a fee a 1-click installer can be provided as well. </p>
-<p>Even when developing within VBA I found myself using the xlwings package creating unittests (although Rubberduck provides a feature to execute unittests within VBA itself). Small example can be found on the <a href="https://www.xlwings.org/blog/unittests-for-microsoft-excel">xlwings blog</a></p>
-<p>Open source and paid license for additional features. </p>
-<h4 id="net-using-languages"><a class="toclink" href="overview-of-excel-development-tools/#net-using-languages">.Net using languages</a></h4>
-<p>.Net is a framework maintained by Microsoft and mainly used for Microsoft`s specific platforms and apps. For this platform there is a package manager called <a href="https://www.nuget.org">NuGet</a>. Which enables the developer to reuse code created by others within your apps. The following add-ins Query storm and SharpCells can make use of these packages. </p>
-<h5 id="c"><a class="toclink" href="overview-of-excel-development-tools/#c">C</a></h5>
-<p><a href="https://querystorm.com">Query Storm</a> is a add-in that lets you write C# code within Excel. Provides it's own runtime for easier installation for end users. 
-<img alt="Query Storm Interface" src="../img/cs_querying.gif" /></p>
-<h5 id="f"><a class="toclink" href="overview-of-excel-development-tools/#f">F</a></h5>
-<p><a href="https://www.sharpcells.com">Sharp cells</a> is a add-in that lets you write F# code within Excel. Also possible to use .Net libraries and call dll from the excel workbook. As a prerequisite it depends on the .Net SDK which could make it a little bit more difficult to use for non developing users compared to C#.</p>
-<p><img alt="Sharp Cells UDF Hello" src="../img/sc_udf_hello.gif" /></p>
-<h3 id="other-non-excel-spreadsheet-solutions-with-a-programming-possibility"><a class="toclink" href="overview-of-excel-development-tools/#other-non-excel-spreadsheet-solutions-with-a-programming-possibility">Other non-excel spreadsheet solutions with a programming possibility</a></h3>
-<p>This article was about Excel in specific, however there are some non Excel platforms that seems interesting. </p>
-<h4 id="google-sheets"><a class="toclink" href="overview-of-excel-development-tools/#google-sheets">Google Sheets</a></h4>
-<p>The spreadsheet program from Google offers the possibility to create custom functions or connect to other Google services. <a href="https://developers.google.com/apps-script/guides/sheets">Extending Google Sheet documentation</a></p>
-<h4 id="neptyne"><a class="toclink" href="overview-of-excel-development-tools/#neptyne">Neptyne</a></h4>
-<p>A cloud based, python powered app development platform using a spreadsheet interface. <a href="https://www.neptyne.com">Neptyne</a></p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="https://en.wikipedia.org/wiki/Visual_Basic_(classic)">Wikipedia on VisualBasic 6</a>&#160;<a class="footnote-backref" href="overview-of-excel-development-tools/#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+
     <nav class="md-post__action">
       <a href="overview-of-excel-development-tools/">
         Continue reading
