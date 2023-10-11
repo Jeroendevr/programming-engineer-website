@@ -401,6 +401,24 @@ dev = ["black", "feedparser (>=6.0,<6.1)", "flake8 (>=4,<7)", "pre-commit (>=3,<
 doc = ["mkdocs-bootswatch (>=1,<2)", "mkdocs-minify-plugin (==0.6.*)", "pygments (>=2.5,<3)", "pymdown-extensions (>=10,<11)"]
 
 [[package]]
+name = "mkdocs-static-i18n"
+version = "1.1.0"
+description = "MkDocs i18n plugin using static translation markdown files"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mkdocs_static_i18n-1.1.0-py3-none-any.whl", hash = "sha256:2ced72f3645863dc9471b55e75f230c137c5ce91809981fd2dd77f4dd904f7c5"},
+    {file = "mkdocs_static_i18n-1.1.0.tar.gz", hash = "sha256:ca1497f20dcc10a0434ba1fe8e052a5c7be7036869501a4db8ad85647939db1d"},
+]
+
+[package.dependencies]
+mkdocs = ">=1.5.2"
+mkdocs-material = {version = ">=9.2.5", optional = true, markers = "extra == \"material\""}
+
+[package.extras]
+material = ["mkdocs-material (>=9.2.5)"]
+
+[[package]]
 name = "packaging"
 version = "23.2"
 description = "Core utilities for Python packages"
@@ -776,4 +794,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.12"
-content-hash = "eab449816f9947976e70a99d0b4d3e840f6a1108d6b6958e9ae92ab2b90affb1"
+content-hash = "284b5375857c88be0291d7149a17acb7c07cf753ff19271665643c364c4b739a"

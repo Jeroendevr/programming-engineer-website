@@ -1,16 +1,18 @@
 site_name: Programming Engineer
-docs_dir: '../../docs/nl'
-site_dir: '../../site/nl'
-site_url: https://programming-engineer.nl/nl
+site_url: https://programming-engineer.nl/
 
 nav:
   - About: index.md
+  - Blog: 
+    - blog/index.md
+  - Procedure: procedure.md
+  - Projects: projects.md
   - Contact: contact.md
 
 theme:
   name: material
-  custom_dir: '../../overrides/' 
-  language: nl
+  language: en
+  custom_dir: overrides
   features:
     - navigation.instant
   palette:
@@ -29,16 +31,6 @@ theme:
         name: Switch to dark mode
       primary: custom
       accent: deep orange
-
-extra:
-  alternate: 
-    - name: English
-      link: /en/
-      lang: en
-
-    - name: Nederlands
-      link: /nl/
-      lang: nl
 
 
 extra_css:
