@@ -1,0 +1,56 @@
+site_name: Programming Engineer
+docs_dir: '../../docs/nl'
+site_dir: '../../site/nl'
+site_url: https://programming-engineer.nl/nl
+
+nav:
+  - About: index.md
+  - Contact: contact.md
+
+theme:
+  name: material
+  custom_dir: '../../overrides/' 
+  language: nl
+  features:
+    - navigation.instant
+  palette:
+    # Palette for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: custom
+      accent: yellow
+
+    # Palette for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: custom
+      accent: deep orange
+
+extra:
+  alternate: 
+    - name: English
+      link: /en/
+      lang: en
+
+    - name: Nederlands
+      link: /nl/
+      lang: nl
+
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+plugins:
+  - tags
+  - blog:
+      post_url_format: "{slug}"
+      blog_dir: blog
+      archive: false
+
+markdown_extensions:
+  - footnotes
+
