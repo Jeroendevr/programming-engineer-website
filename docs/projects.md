@@ -25,5 +25,3 @@ Some benefits over the "old" textMate theme include :
   - Support for Python Docstrings
 - Make use of Semantic Highlighting defined within Visual Studio Code (for use of classes and decorators)
 
-### This Site
-Created with [Sphinx](https://www.sphinx-doc.org/en/master/) and the [Markedly](https://myst-parser.readthedocs.io/en/latest/) to simply create a static website based off markdown files too provide speed and simplicity to the writer. If you want to create one yourself see this helpful [blog article](https://www.errbufferoverfl.me/posts/2020/sphinx-blog-part-one/). 

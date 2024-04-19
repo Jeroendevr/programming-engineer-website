@@ -1,10 +1,9 @@
 site_name: Programming Engineer
-site_url: https://programming-engineer.nl/
+site_url: https://programming-engineer.nl
 
 nav:
   - About: index.md
-  - Blog: 
-    - blog/index.md
+  - Blog: blog/index.md
   - Procedure: procedure.md
   - Projects: projects.md
   - Contact: contact.md
@@ -13,8 +12,6 @@ theme:
   name: material
   language: en
   custom_dir: overrides
-  features:
-    - navigation.instant
   palette:
     # Palette for dark mode
     - scheme: slate
@@ -40,7 +37,6 @@ plugins:
   - tags
   - blog:
       post_url_format: "{slug}"
-      blog_dir: blog
       archive: false
 
 markdown_extensions:

@@ -24,7 +24,7 @@ While VBA is still supported it's editor is dated from when VisualBasic 6 was re
 
 #### Rubberduck
  I have used [Rubberduck](https://rubberduckvba.com) extensively. Because of its many features like its Code Explorer making it easy to navigate through your classes and functions and the refactoring tool so you can easily rename your variables or functions. Rubberduck is an open-source project.  
-![Code Explorer](../../img/rd_code-explorer-highlight.png)
+![CodeExplorer] [../../img/rd_code-explorer-highlight.png]
 ![Refactorings](../../img/rd_refactorings-highlight.png)
 
 

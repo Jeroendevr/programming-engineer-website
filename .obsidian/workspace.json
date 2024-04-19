@@ -1,0 +1,207 @@
+{
+  "main": {
+    "id": "6aa58c32f029f75f",
+    "type": "split",
+    "children": [
+      {
+        "id": "9b4d7cd22b710db3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a0cd5c4903689344",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "docs/img/rd_code-explorer-highlight.png"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "fa4383aadd813582",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "685bd5a8a025cc2d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/blog/posts/excel-development-overview.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "30d0fd45c50f3095",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/projects.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "86f9e8bca1fb1cab",
+    "type": "split",
+    "children": [
+      {
+        "id": "fa86c9df6b616c2a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b53aa07b035d342d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "60bc8222809b6c87",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f6749fa15512b86a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cf85406a645ef046",
+    "type": "split",
+    "children": [
+      {
+        "id": "7baddf3cf3095a3e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d19e1243b43f9a38",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/blog/posts/excel-development-overview.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4957413c1bc752fe",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/blog/posts/excel-development-overview.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7ea8904787a64c42",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3c7536a1861aae15",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/blog/posts/excel-development-overview.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:Nieuw doek aanmaken": false,
+      "switcher:Open snel wisselen": false,
+      "graph:Open grafiek weergave": false,
+      "daily-notes:Open de notitie van vandaag": false,
+      "templates:Sjabloon invoegen": false,
+      "command-palette:Open opdrachtenpaneel": false
+    }
+  },
+  "active": "685bd5a8a025cc2d",
+  "lastOpenFiles": [
+    "site/blog_concept/python-project-setup-layout/index.html",
+    "site/blog_concept/Locale and culture settings in Office Scripts/index.html",
+    "site/blog_concept/python-project-setup-layout",
+    "site/blog_concept/Locale and culture settings in Office Scripts",
+    "site/blog_concept",
+    "site/blog/overview-of-excel-development-tools/index.html",
+    "site/blog/overview-of-excel-development-tools",
+    "site/blog/__super__-considered-a-case-for-dependency-injection/index.html",
+    "site/blog/__super__-considered-a-case-for-dependency-injection",
+    "site/blog/Convention/index.html",
+    "site/blog/Convention",
+    "docs/projects.md",
+    "docs/blog/posts/excel-development-overview.md",
+    "docs/blog/posts/__super()__ considers a case for dependency injection.md",
+    "docs/img/rd_code-explorer-highlight.png",
+    "docs/procedure.md",
+    "docs/blog/index.md",
+    "docs/blog/Convention.md",
+    "docs/blog/posts/a-test-post.md",
+    "docs/index.md",
+    "docs/index.nl.md",
+    "Naamloos 1.canvas",
+    "Naamloos.canvas",
+    "docs/blog_concept/Locale and culture settings in Office Scripts.md",
+    "docs/blog_concept/python-project-setup-layout.md",
+    "docs/index.en.md",
+    "docs/contact.md"
+  ]
+}
