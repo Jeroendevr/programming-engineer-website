@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/posts/__super()__ considers a case for dependency injection.md",
+                "file": "docs/blog/posts/__super()__ considered a case for dependency injection.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/posts/__super()__ considers a case for dependency injection.md",
+                "file": "docs/blog/posts/__super()__ considered a case for dependency injection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/posts/__super()__ considers a case for dependency injection.md",
+                "file": "docs/blog/posts/__super()__ considered a case for dependency injection.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/posts/__super()__ considers a case for dependency injection.md"
+                "file": "docs/blog/posts/__super()__ considered a case for dependency injection.md"
               }
             }
           }
@@ -172,7 +172,7 @@
     "site/blog/overview-of-excel-development-tools",
     "site/blog/__super__-considered-a-case-for-dependency-injection/index.html",
     "docs/projects.md",
-    "docs/blog/posts/__super()__ considers a case for dependency injection.md",
+    "docs/blog/posts/__super()__ considered a case for dependency injection.md",
     "docs/img/rd_code-explorer-highlight.png",
     "docs/procedure.md",
     "docs/blog/index.md",

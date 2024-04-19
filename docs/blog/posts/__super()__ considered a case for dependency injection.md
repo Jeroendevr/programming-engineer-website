@@ -9,7 +9,7 @@ tags:
   - fastapi
   - sqlalchemy
 ---
-# __super()__ considers a case for dependency injection
+# __super()__ considered a case for dependency injection
 In following of [python super() considered harmfull](https://fuhm.net/super-harmful/) and `__super()__ considered __super()__` by Raymond Hettinger [Blog](https://rhettinger.wordpress.com/2011/05/26/super-considered-super/) [Video](https://youtu.be/EiOglTERPEo?si=6pdt8kMhLols9Wal) I came to the idea to use it for dependency injection.
 # `__super()__`
 If you haven't seen and used `__super()__` before, see the video from Hettinger or the [docs.python](https://docs.python.org/3.13/library/functions.html#super) . In short returns a object that delegates method calls to a parent or sibling of the same type. 
