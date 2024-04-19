@@ -4,22 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "9b4d7cd22b710db3",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a0cd5c4903689344",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "docs/img/rd_code-explorer-highlight.png"
-              }
-            }
-          }
-        ]
-      },
-      {
         "id": "fa4383aadd813582",
         "type": "tabs",
         "children": [
@@ -29,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/posts/excel-development-overview.md",
+                "file": "docs/blog/posts/__super()__ considers a case for dependency injection.md",
                 "mode": "source",
                 "source": false
               }
@@ -113,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/posts/excel-development-overview.md",
+                "file": "docs/blog/posts/__super()__ considers a case for dependency injection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/posts/excel-development-overview.md",
+                "file": "docs/blog/posts/__super()__ considers a case for dependency injection.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/posts/excel-development-overview.md"
+                "file": "docs/blog/posts/__super()__ considers a case for dependency injection.md"
               }
             }
           }
@@ -176,6 +160,7 @@
   },
   "active": "685bd5a8a025cc2d",
   "lastOpenFiles": [
+    "docs/blog/posts/excel-development-overview.md",
     "orca-app.yaml",
     "Niet bevestigd 903118.crdownload",
     "site/blog_concept/python-project-setup-layout/index.html",
@@ -186,9 +171,7 @@
     "site/blog/overview-of-excel-development-tools/index.html",
     "site/blog/overview-of-excel-development-tools",
     "site/blog/__super__-considered-a-case-for-dependency-injection/index.html",
-    "site/blog/__super__-considered-a-case-for-dependency-injection",
     "docs/projects.md",
-    "docs/blog/posts/excel-development-overview.md",
     "docs/blog/posts/__super()__ considers a case for dependency injection.md",
     "docs/img/rd_code-explorer-highlight.png",
     "docs/procedure.md",

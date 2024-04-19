@@ -13,14 +13,14 @@ In following of [python super() considered harmfull](https://fuhm.net/super-harm
 # `__super()__`
 If you haven't seen and used `__super()__` before, see the video from Hettinger or the [docs.python](https://docs.python.org/3.13/library/functions.html#super) . In short returns a object that delegates method calls to a parent or sibling of the same type. 
 # Dependency Injection
-For those unaware of the term Dependency Injection or DI for short. It is a pattern to to decouple dependencies (it can be a database, file, class or function) from a certain interpretation. So it makes it easier to test or to change later on. 
+For those unaware of the term Dependency Injection or DI for short. It is a pattern to to decouple dependencies (it can be a database, file, class or function) from a certain implementation. So it makes it easier to test or to change later on. 
 # Reason to use `__super()__` 
 For a small project (<150 hrs) I was working on, I wanted to achieve the following
 - Write production code (obviously)
 - Write Tests (Unit and Integration)
 - Unit Tests should be independent from production 
 - Writing tests should be easy
-- No clunky adjustment to production code in order to make the testing easy 1
+- No clunky adjustment to production code in order to make the testing easy [^1]
 - Unittest should be fast
 - Tests should be independent of production data
 
@@ -28,14 +28,15 @@ For a small project (<150 hrs) I was working on, I wanted to achieve the followi
 ## Motivation of Reason
 
 ### No adjustment to production in order to make it testable
-An insight I got from reading a book about testing 2.  Is that code is a liability. I want to minimize production code. (Not in a strict sense that fewer lines are better) But the more code the more possibilities in can fail. 
+An insight I got from reading a book about testing[^2].  Is that code is a liability. I want to minimize production code. (Not in a strict sense that fewer lines are better) But the more code the more possibilities in can fail. 
 ### Tests should be independent of production data and production system
 **Production Data**
 This one speaks for itself, I think. As production can change over time you cannot make assumptions about the data and you will continuously ask yourself questions *is the test wrong or has production data changed* 
+
 **Production system**
 For the production system it is a little bit different. In this case there is a database. So I could use it to write my tests against it. But I certainly want to avoid the possibility that my tests drops a database table and my production data is gone. (Although would be good lesson to make backups. ) Or modifies existing records.
 ### Unittest should be fast 
-When adding functionality I sometimes work test-driven and the tests lead me to bugs in the program. So I run the unittests very frequently. The amount of tests I run are something in the range of 10-100 times *per issue* for a single test of class of tests and around 1-5 times for the entire test suite again this is also *per issue*. I could bring that number down if I would think longer about my code but perhaps this is laziness or a way to avoid overengineering *if it passes it passes*. 
+When adding functionality I sometimes work test-driven and the tests lead me to bugs in the program. So I run the unittests very frequently. The amount of tests I run are something in the range of 10-100 times *per issue* for a single test of class of tests and around 1-5 times for the entire test suite again this is also *per issue*.
 
 Adding a 5 second during test could lead to a possible increase of 5 minutes of waiting time per issue (5 secs per issue * 60 runs = 300 sec = 5 minutes). 
 *Benchmark 26 tests in 3.4 seconds for the current project.* 
@@ -43,14 +44,14 @@ Adding a 5 second during test could lead to a possible increase of 5 minutes of 
 Fast tests are almost equal to local test. You could create a online database identical to the production database but this *can* lead to longer running times for tests as a connection has to be made. In my case I had only two tests when ran it took about 2 seconds. (They could be run in parallel)
 # Design choices
 ## Design choices 1
-Have a local database for the majority of the tests. In order to keep te tests fast. This could have been a local PostgreSQL in a docker environment but I am not so confident with docker and a full PostgreSQL was not needed for this test setup.
+Have a local database for the majority of the tests. In order to keep te tests fast. This could have been a local PostgreSQL in a docker environment but a full PostgreSQL was not needed for this test setup. But this makes the testing environment unnecessarily complex. Besides that I am not proficient with docker ecosystem.
 ## Design choice 2
 With native support in the standard library for SQLite included in the python language, I chose that one. It is fast, easily run locally. 
 ## Design choice 3
 I was already considering a ORM but having multiple databases strengthened the choice for the ORM SQLAlchemy in this case. 
 # Code-ing
 Lets look at the steps taken from idea to code and a couple of refactors and considerations. 
-The setup involved was
+The development stack involved was: 
 - Python 
 - FastAPI
 - PostgreSQL
@@ -231,12 +232,11 @@ flowchart BT
 ```
 when `engine` property is called on`TestRecord` first `Records` is checked, then `TestDatabase` (and then `Database` through Records`)
 I found this quite a neat use of Multiple Inheritance. 
-
 # Hindsight
-After setting up the project, I had missed a design pattern available in FastAPI (seeing ArjanCodes) 2
+After setting up the project, I had missed a design pattern available in FastAPI (seeing ArjanCodes)[^3]
 the usage of `depends` was new to me. 
 
-## Example with fatapi.Depends
+## Example with fastapi.Depends
 
 ```python
 """prod_v5.py"""
@@ -304,6 +304,7 @@ This pattern is  allows for more functional style programming as it does not nee
 Another benefit I see is that querying is more neat as I don't need to set up a context manager (`with Session() as session:` ) it is less text and more readable. So I will definitely try to make use of this pattern when using **FastAPI** in another project.
 
 **Sources**
-1. Good explanation of DI can be found at ArjanCodes [blog](https://www.arjancodes.com/blog/python-dependency-injection-best-practices/) 
-2. In the spirit of Vladimir Khorikov [Unit Testing Principles, Practices, and Patterns](https://www.manning.com/books/unit-testing) *Remember, all code, including test code, is a liability*.  I want to minimize code and especially production. Avoid that production fails because of an adjustment made so I can test it. 
-3. [ArjanCodes discussing FastAPI YouTube](https://youtu.be/XlnmN4BfCxw?si=FfNFZIYyTTdKtIDF) 
+[^1]: Good explanation of DI can be found at ArjanCodes [blog](https://www.arjancodes.com/blog/python-dependency-injection-best-practices/) 
+[^2]:
+	In the spirit of Vladimir Khorikov [Unit Testing Principles, Practices, and Patterns](https://www.manning.com/books/unit-testing) *Remember, all code, including test code, is a liability*.  I want to minimize code and especially production. Avoid that production fails because of an adjustment made so I can test it. 
+[^3]: [ArjanCodes discussing FastAPI YouTube](https://youtu.be/XlnmN4BfCxw?si=FfNFZIYyTTdKtIDF) 
