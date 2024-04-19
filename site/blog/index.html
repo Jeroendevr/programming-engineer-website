@@ -368,14 +368,14 @@
 <h2 id="__super__"><a class="toclink" href="__super__-considered-a-case-for-dependency-injection/#__super__"><code>__super()__</code></a></h2>
 <p>If you haven't seen and used <code>__super()__</code> before, see the video from Hettinger or the <a href="https://docs.python.org/3.13/library/functions.html#super">docs.python</a> . In short returns a object that delegates method calls to a parent or sibling of the same type. </p>
 <h2 id="dependency-injection"><a class="toclink" href="__super__-considered-a-case-for-dependency-injection/#dependency-injection">Dependency Injection</a></h2>
-<p>For those unaware of the term Dependency Injection or DI for short. It is a pattern to to decouple dependencies (it can be a database, file, class or function) from a certain interpretation. So it makes it easier to test or to change later on. </p>
+<p>For those unaware of the term Dependency Injection or DI for short. It is a pattern to to decouple dependencies (it can be a database, file, class or function) from a certain implementation. So it makes it easier to test or to change later on. </p>
 <h2 id="reason-to-use-__super__"><a class="toclink" href="__super__-considered-a-case-for-dependency-injection/#reason-to-use-__super__">Reason to use <code>__super()__</code></a></h2>
 <p>For a small project (&lt;150 hrs) I was working on, I wanted to achieve the following
 - Write production code (obviously)
 - Write Tests (Unit and Integration)
 - Unit Tests should be independent from production 
 - Writing tests should be easy
-- No clunky adjustment to production code in order to make the testing easy 1
+- No clunky adjustment to production code in order to make the testing easy <sup id="fnref:1"><a class="footnote-ref" href="__super__-considered-a-case-for-dependency-injection/#fn:1">1</a></sup>
 - Unittest should be fast
 - Tests should be independent of production data</p>
 

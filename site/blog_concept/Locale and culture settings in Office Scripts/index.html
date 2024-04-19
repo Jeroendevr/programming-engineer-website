@@ -324,73 +324,73 @@ See ISO 8601</p>
 <p>Create date in memory, log and paste in cell</p>
 <p>See Example of Excel DatetimeFormatInfo
 https://learn.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.datetimeformatinfo?view=office-scripts</p>
-<pre><code class="language-TS">/**
- * This script sets the value of a cell to a date string for January 2, 2023.
- * It writes the day or month first in the string based on system settings.
- */
-function main(workbook: ExcelScript.Workbook) {
-  // Get the first cell in the current worksheet.
-  const cell = workbook.getActiveWorksheet().getCell(0,0);
-
-  // Get the date format.
-  const cultureInfo : ExcelScript.CultureInfo = workbook.getApplication().getCultureInfo();
-  const systemDateTimeFormat : ExcelScript.DatetimeFormatInfo = cultureInfo.getDatetimeFormat();
-  const shortDatePattern : string = systemDateTimeFormat.getShortDatePattern();
-
-  // Determine if the date should start with the month or day.
-  if (shortDatePattern.startsWith(&quot;m&quot;)) {
-    cell.setValue(&quot;1/2/2023&quot;);
-  } else {
-    cell.setValue(&quot;2/1/2023&quot;);
-  }
-}
-</code></pre>
+<div class="language-TS highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/**</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cm"> * This script sets the value of a cell to a date string for January 2, 2023.</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm"> * It writes the day or month first in the string based on system settings.</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm"> */</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">(</span><span class="nx">workbook</span><span class="o">:</span><span class="w"> </span><span class="kt">ExcelScript.Workbook</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="c1">// Get the first cell in the current worksheet.</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">getActiveWorksheet</span><span class="p">().</span><span class="nx">getCell</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="c1">// Get the date format.</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cultureInfo</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">ExcelScript.CultureInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">getApplication</span><span class="p">().</span><span class="nx">getCultureInfo</span><span class="p">();</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">systemDateTimeFormat</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">ExcelScript.DatetimeFormatInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cultureInfo</span><span class="p">.</span><span class="nx">getDatetimeFormat</span><span class="p">();</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">shortDatePattern</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">systemDateTimeFormat</span><span class="p">.</span><span class="nx">getShortDatePattern</span><span class="p">();</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="c1">// Determine if the date should start with the month or day.</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">shortDatePattern</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nx">cell</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s2">&quot;1/2/2023&quot;</span><span class="p">);</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nx">cell</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s2">&quot;2/1/2023&quot;</span><span class="p">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">}</span>
+</span></code></pre></div>
 <h1 id="record-setting-cell-to-2-january">Record setting cell to 2 January</h1>
-<pre><code class="language-TS">function main(workbook: ExcelScript.Workbook) {
-    let selectedSheet = workbook.getActiveWorksheet();
-    // Set range A1 on selectedSheet
-    selectedSheet.getRange(&quot;A1&quot;).setValue(&quot;1/2/2023&quot;);
-}
-</code></pre>
+<div class="language-TS highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">(</span><span class="nx">workbook</span><span class="o">:</span><span class="w"> </span><span class="kt">ExcelScript.Workbook</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">selectedSheet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">getActiveWorksheet</span><span class="p">();</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="c1">// Set range A1 on selectedSheet</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">selectedSheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="s2">&quot;A1&quot;</span><span class="p">).</span><span class="nx">setValue</span><span class="p">(</span><span class="s2">&quot;1/2/2023&quot;</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h1 id="using-javascripts-built-in-date-object">Using Javascripts built-in date object</h1>
 <p>Office scripts comes with some built-in objects of JavaScripts for example Date and Math
 https://learn.microsoft.com/en-us/office/dev/scripts/develop/javascript-objects</p>
-<pre><code class="language-TS">function main(workbook: ExcelScript.Workbook) {
-    let dateRange = workbook.getActiveWorksheet().getRange(&quot;A1&quot;)
-    let date = new Date(2023, 0, 2)
-    console.log(date.toLocaleDateString())
-    dateRange.setValue(date.toLocaleDateString())
-}
-</code></pre>
+<div class="language-TS highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">(</span><span class="nx">workbook</span><span class="o">:</span><span class="w"> </span><span class="kt">ExcelScript.Workbook</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">dateRange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">getActiveWorksheet</span><span class="p">().</span><span class="nx">getRange</span><span class="p">(</span><span class="s2">&quot;A1&quot;</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2023</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">())</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">dateRange</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">())</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>What happens when my dates provided are within localeDateString
 Can be forced to used certain locale
 See BCP 47 Language Tag
 Months are 0-based</p>
-<pre><code class="language-TS">function main(workbook: ExcelScript.Workbook) {
-    let dateRange = workbook.getActiveWorksheet().getRange(&quot;A1&quot;)
-    let date = new Date(2023, 0, 2)
-    console.log(date.toLocaleDateString('nl-NL'))
-    dateRange.setValue(date.toLocaleDateString('nl-NL'))
-}
-</code></pre>
-<pre><code class="language-TS">function main(workbook: ExcelScript.Workbook) {
-    // Setting cell A1 to a string value
-    let dateRange_str = workbook.getActiveWorksheet().getRange(&quot;A1&quot;)
-    let date_str = new Date(2023, 0, 2)
-    // let date = new Date(Date.parse(&quot;2023-02-01T00:00:00&quot;))
-    let dtString_str = date_str.toLocaleDateString()
-    console.log(dtString_str)
-    dateRange_str.setValue(dtString_str)
-
-    // Setting cell A2 to a date value
-    let dateRange_dv = workbook.getActiveWorksheet().getRange(&quot;A2&quot;)
-    let date_dv = new Date(2023, 0, 2)
-    // let date = new Date(Date.parse(&quot;2023-02-01T00:00:00&quot;))
-    console.log(date_dv.toLocaleDateString())
-    dateRange_dv.setValue(date_dv.toLocaleDateString())
-
-}
-</code></pre>
+<div class="language-TS highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">(</span><span class="nx">workbook</span><span class="o">:</span><span class="w"> </span><span class="kt">ExcelScript.Workbook</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">dateRange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">getActiveWorksheet</span><span class="p">().</span><span class="nx">getRange</span><span class="p">(</span><span class="s2">&quot;A1&quot;</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2023</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">(</span><span class="s1">&#39;nl-NL&#39;</span><span class="p">))</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">dateRange</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">(</span><span class="s1">&#39;nl-NL&#39;</span><span class="p">))</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-TS highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">(</span><span class="nx">workbook</span><span class="o">:</span><span class="w"> </span><span class="kt">ExcelScript.Workbook</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="c1">// Setting cell A1 to a string value</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">dateRange_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">getActiveWorksheet</span><span class="p">().</span><span class="nx">getRange</span><span class="p">(</span><span class="s2">&quot;A1&quot;</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">date_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2023</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="c1">// let date = new Date(Date.parse(&quot;2023-02-01T00:00:00&quot;))</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">dtString_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">date_str</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">()</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dtString_str</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nx">dateRange_str</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">dtString_str</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="c1">// Setting cell A2 to a date value</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">dateRange_dv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">workbook</span><span class="p">.</span><span class="nx">getActiveWorksheet</span><span class="p">().</span><span class="nx">getRange</span><span class="p">(</span><span class="s2">&quot;A2&quot;</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">date_dv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2023</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="c1">// let date = new Date(Date.parse(&quot;2023-02-01T00:00:00&quot;))</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date_dv</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">())</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nx">dateRange_dv</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">date_dv</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">())</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="p">}</span>
+</span></code></pre></div>
 
 
 
