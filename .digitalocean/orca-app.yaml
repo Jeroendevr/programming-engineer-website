@@ -1,0 +1,31 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+domains:
+- domain: programming-engineer.nl
+  type: PRIMARY
+  wildcard: true
+  zone: programming-engineer.nl
+- domain: www.programming-engineer.nl
+  type: ALIAS
+  zone: programming-engineer.nl
+features:
+- buildpack-stack=ubuntu-22
+ingress:
+  rules:
+  - component:
+      name: programming-engineer-website-sit
+    match:
+      path:
+        prefix: /
+name: orca-app
+region: ams
+static_sites:
+- catchall_document: www.programming-engineer.nl
+  environment_slug: html
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: Jeroendevr/programming-engineer-website
+  name: programming-engineer-website-sit
+  source_dir: site
