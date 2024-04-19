@@ -1,0 +1,761 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://programming-engineer.nl/blog/__super__-considered-a-case-for-dependency-injection/">
+      
+      
+        <link rel="prev" href="../overview-of-excel-development-tools/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>__super()__ considered a case for dependency injection - Programming Engineer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#__super__" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Programming Engineer" class="md-header__button md-logo" aria-label="Programming Engineer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programming Engineer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              __super()__ considered a case for dependency injection
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="yellow"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programming Engineer" class="md-nav__button md-logo" aria-label="Programming Engineer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Programming Engineer
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procedure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/jeroendevr" alt="Jeroen de Vries">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Jeroen de Vries
+                        
+                      </strong>
+                      <br>
+                      Me
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2024-04-19 00:00:00" class="md-ellipsis">April 19, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              6 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">python</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">test</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">fastapi</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">sqlalchemy</span>
+    
+  
+</nav>
+
+
+
+<p>In following of <a href="https://fuhm.net/super-harmful/">python super() considered harmfull</a> and <code>__super()__ considered __super()__</code> by Raymond Hettinger <a href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">Blog</a> <a href="https://youtu.be/EiOglTERPEo?si=6pdt8kMhLols9Wal">Video</a> I came to the idea to use it for dependency injection.</p>
+<h1 id="__super__"><code>__super()__</code></h1>
+<p>If you haven't seen and used <code>__super()__</code> before, see the video from Hettinger or the <a href="https://docs.python.org/3.13/library/functions.html#super">docs.python</a> . In short returns a object that delegates method calls to a parent or sibling of the same type. </p>
+<h1 id="dependency-injection">Dependency Injection</h1>
+<p>For those unaware of the term Dependency Injection or DI for short. It is a pattern to to decouple dependencies (it can be a database, file, class or function) from a certain interpretation. So it makes it easier to test or to change later on. </p>
+<h1 id="reason-to-use-__super__">Reason to use <code>__super()__</code></h1>
+<p>For a small project (&lt;150 hrs) I was working on, I wanted to achieve the following
+- Write production code (obviously)
+- Write Tests (Unit and Integration)
+- Unit Tests should be independent from production 
+- Writing tests should be easy
+- No clunky adjustment to production code in order to make the testing easy 1
+- Unittest should be fast
+- Tests should be independent of production data</p>
+<!-- more -->
+<h2 id="motivation-of-reason">Motivation of Reason</h2>
+<h3 id="no-adjustment-to-production-in-order-to-make-it-testable">No adjustment to production in order to make it testable</h3>
+<p>An insight I got from reading a book about testing 2.  Is that code is a liability. I want to minimize production code. (Not in a strict sense that fewer lines are better) But the more code the more possibilities in can fail. </p>
+<h3 id="tests-should-be-independent-of-production-data-and-production-system">Tests should be independent of production data and production system</h3>
+<p><strong>Production Data</strong>
+This one speaks for itself, I think. As production can change over time you cannot make assumptions about the data and you will continuously ask yourself questions <em>is the test wrong or has production data changed</em> 
+<strong>Production system</strong>
+For the production system it is a little bit different. In this case there is a database. So I could use it to write my tests against it. But I certainly want to avoid the possibility that my tests drops a database table and my production data is gone. (Although would be good lesson to make backups. ) Or modifies existing records.</p>
+<h3 id="unittest-should-be-fast">Unittest should be fast</h3>
+<p>When adding functionality I sometimes work test-driven and the tests lead me to bugs in the program. So I run the unittests very frequently. The amount of tests I run are something in the range of 10-100 times <em>per issue</em> for a single test of class of tests and around 1-5 times for the entire test suite again this is also <em>per issue</em>. I could bring that number down if I would think longer about my code but perhaps this is laziness or a way to avoid overengineering <em>if it passes it passes</em>. </p>
+<p>Adding a 5 second during test could lead to a possible increase of 5 minutes of waiting time per issue (5 secs per issue * 60 runs = 300 sec = 5 minutes). 
+<em>Benchmark 26 tests in 3.4 seconds for the current project.</em> </p>
+<h4 id="fast-local">Fast ≈ local</h4>
+<p>Fast tests are almost equal to local test. You could create a online database identical to the production database but this <em>can</em> lead to longer running times for tests as a connection has to be made. In my case I had only two tests when ran it took about 2 seconds. (They could be run in parallel)</p>
+<h1 id="design-choices">Design choices</h1>
+<h2 id="design-choices-1">Design choices 1</h2>
+<p>Have a local database for the majority of the tests. In order to keep te tests fast. This could have been a local PostgreSQL in a docker environment but I am not so confident with docker and a full PostgreSQL was not needed for this test setup.</p>
+<h2 id="design-choice-2">Design choice 2</h2>
+<p>With native support in the standard library for SQLite included in the python language, I chose that one. It is fast, easily run locally. </p>
+<h2 id="design-choice-3">Design choice 3</h2>
+<p>I was already considering a ORM but having multiple databases strengthened the choice for the ORM SQLAlchemy in this case. </p>
+<h1 id="code-ing">Code-ing</h1>
+<p>Lets look at the steps taken from idea to code and a couple of refactors and considerations. 
+The setup involved was
+- Python 
+- FastAPI
+- PostgreSQL
+- SQLAlchemy</p>
+<h1 id="bad-design">Bad design</h1>
+<h2 id="database-connected-to-the-class">Database connected to the class</h2>
+<pre><code class="language-python">class Records:
+
+    engine = create_engine(&quot;postgresql+psycopg2://scott:tiger@localhost/test&quot;)
+
+    def get_database_record(self):
+        with Session(self.engine) as session:
+            stmt = select(OnlyProdDB.item)
+            items = session.scalar(stmt)
+
+            return items
+
+</code></pre>
+<p>Now the implementation of the class is connected to the database. How would we reuse the methods of the <code>Records</code> class or test it? Overriding the engine perhaps?</p>
+<pre><code class="language-python">import unittest
+
+from sqlalchemy import create_engine
+
+from super_dependency_injection.prod import Records
+
+
+class TestProd(unittest.TestCase):
+    def test_get_record(self):
+        test_record = Records()
+        test_record.engine = create_engine(&quot;localtestengine&quot;) # Overriding engine
+
+</code></pre>
+<p>Which conforms to the design decision to conform that tests should be independent of production code. But the engine is now connected to the class which we don't want as the engine is not reusable and the Records class as a whole.</p>
+<h2 id="database-defined-within-a-method">Database defined within a method</h2>
+<p>Lets have the engine defined somewhere else and import it</p>
+<pre><code class="language-python">def engine():
+    return &quot;postgresql+psycopg://scott:tiger@localhost/test&quot;
+
+
+class Records:
+
+    engine = create_engine(engine())
+
+    def get_database_record(self):
+        with Session(self.engine) as session:
+            stmt = select(OnlyProdDB.item)
+            items = session.scalar(stmt)
+
+            return items
+</code></pre>
+<p>Much better and we can still override it during test, like in the previous example. </p>
+<h2 id="database-defined-in-the-constructor-__init__-method">Database defined in the constructor / <code>__init__</code> method</h2>
+<p>The first example where dependency injection comes in. We supply the engine as a parameter during initialisation of a <code>Record</code> class.</p>
+<pre><code class="language-python">def engine():
+    return &quot;postgresql+psycopg://scott:tiger@localhost/test&quot;
+
+
+class Records:
+
+    def __init__(self, engine) -&gt; None:
+        self.engine = create_engine(engine)
+
+    def get_database_record(self):
+        with Session(self.engine) as session:
+            stmt = select(OnlyProdDB.item)
+            items = session.scalar(stmt)
+
+            return items
+</code></pre>
+<p>When testing we can supply our own engine</p>
+<pre><code class="language-Python">def test_engine():
+    return &quot;localtestengine&quot;
+
+
+class TestProd(unittest.TestCase):
+    def test_get_record(self):
+        test_record = Records(engine=test_engine)
+        test_record.engine  # localtestengine
+</code></pre>
+<h2 id="database-defined-through-inheritance">Database defined through Inheritance</h2>
+<pre><code class="language-Python">class Database:
+    engine = create_engine(&quot;postgresql+psycopg://scott:tiger@localhost/test&quot;)
+
+
+class Records(Database):
+
+    def get_database_record(self):
+        with Session(self.engine) as session:
+            stmt = select(OnlyProdDB.item)
+            items = session.scalar(stmt)
+
+            return items
+
+
+class Tables(Database):
+
+    def get_database_table(self):
+        with Session(self.engine) as session:
+            pass
+</code></pre>
+<p>Now multiple <em>classes</em> can inherit from Database and reuse the defined behaviour in the superclass <code>Database</code>
+But for testing we need to override the engine property like in the first two examples. But it does not have to and this is where Multiple Cooperative Inheritance comes in. </p>
+<h2 id="database-defined-through-inheritance-and-testing-through-multiple-cooperative-inheritance">Database defined through inheritance and testing through multiple cooperative inheritance</h2>
+<p>We can keep the code in production the same as defined in the previous example and reuse the same Database for another class <code>Tables</code>.</p>
+<pre><code class="language-Python">class Database:
+    engine = create_engine(&quot;postgresql+psycopg://scott:tiger@localhost/test&quot;)
+
+
+class Records(Database):
+
+    def get_database_record(self):
+        with Session(self.engine) as session:
+            stmt = select(OnlyProdDB.item)
+            items = session.scalar(stmt)
+
+            return items
+
+
+class Tables(Database):
+
+    def get_database_table(self):
+        with Session(self.engine) as session:
+            pass
+</code></pre>
+<p>But we can test it using </p>
+<pre><code class="language-python">import unittest
+
+from sqlalchemy import create_engine
+
+from super_dependency_injection.prod import Database, Records
+
+
+class TestDatabase(Database):
+    engine = create_engine(&quot;localtestengine&quot;)
+
+
+class TestRecords(Records, TestDatabase):
+    pass
+
+
+class TestProd(unittest.TestCase):
+    def test_get_record(self):
+        test_record = TestRecords()
+        test_record.engine  # localtestengine
+
+</code></pre>
+<p>Defining <code>TestRecords</code> it inherited from two classes <code>Records</code> and <code>TestDatabase</code>. When calling the <code>enginge</code> property on <code>test_record</code> it dit not yield <code>"postgresql+psycopg://scott:tiger@localhost/test"</code> but <code>localtestengine</code> as it was the next in line. </p>
+<pre><code class="language-mermaid">---
+title: Method Resolution
+---
+
+flowchart BT
+    Records --&gt; Database
+    TestDatabase --&gt; Database
+    TestRecord --&gt; Records
+    TestRecord --&gt; TestDatabase
+
+    Records -- 2. engine ---TestDatabase
+    TestRecord -- 1. engine ---Records
+
+</code></pre>
+<p>when <code>engine</code> property is called on<code>TestRecord</code> first <code>Records</code> is checked, then <code>TestDatabase</code> (and then <code>Database</code> through Records`)
+I found this quite a neat use of Multiple Inheritance. </p>
+<h1 id="hindsight">Hindsight</h1>
+<p>After setting up the project, I had missed a design pattern available in FastAPI (seeing ArjanCodes) 2
+the usage of <code>depends</code> was new to me. </p>
+<h2 id="example-with-fatapidepends">Example with fatapi.Depends</h2>
+<pre><code class="language-python">&quot;&quot;&quot;prod_v5.py&quot;&quot;&quot;
+
+from fastapi import Depends, FastAPI
+from sqlalchemy import String, create_engine, select
+from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column, sessionmaker
+
+app = FastAPI()
+
+
+def get_db():
+    engine = create_engine(&quot;postgresql+psycopg://scott:tiger@localhost/test&quot;)
+    session = sessionmaker(engine)
+    database = session()
+    try:
+        yield database
+    finally:
+        database.close()
+
+
+@app.get(&quot;/record&quot;)
+def get_record(session: Session = Depends(get_db)):
+    db_record = get_database_record(session)
+    return db_record
+
+
+class Base(DeclarativeBase):
+    pass
+
+
+class OnlyProdDB(Base):
+    __tablename__ = &quot;only_prod_db&quot;
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    item: Mapped[str] = mapped_column(String)
+
+
+def get_database_record(session):
+    db_item = session.query(OnlyProdDB.item)
+    return db_item
+</code></pre>
+<pre><code class="language-python">import unittest
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+from super_dependency_injection.prod_v5 import get_database_record
+
+engine = create_engine(&quot;localtestengine&quot;)
+session = sessionmaker(engine)
+database = session()
+
+
+class TestProd(unittest.TestCase):
+    def test_get_record(self):
+        test_record = get_database_record(database)
+        test_record
+
+</code></pre>
+<p>This pattern is  allows for more functional style programming as it does not need the creation of classes See the previous example of<code>Records</code> inheriting from  <code>Database</code>
+Another benefit I see is that querying is more neat as I don't need to set up a context manager (<code>with Session() as session:</code> ) it is less text and more readable. So I will definitely try to make use of this pattern when using <strong>FastAPI</strong> in another project.</p>
+<p><strong>Sources</strong>
+1. Good explanation of DI can be found at ArjanCodes <a href="https://www.arjancodes.com/blog/python-dependency-injection-best-practices/">blog</a> 
+2. In the spirit of Vladimir Khorikov <a href="https://www.manning.com/books/unit-testing">Unit Testing Principles, Practices, and Patterns</a> <em>Remember, all code, including test code, is a liability</em>.  I want to minimize code and especially production. Avoid that production fails because of an adjustment made so I can test it. 
+3. <a href="https://youtu.be/XlnmN4BfCxw?si=FfNFZIYyTTdKtIDF">ArjanCodes discussing FastAPI YouTube</a> </p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+    
+  </body>
+</html>
