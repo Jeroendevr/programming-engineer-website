@@ -9,11 +9,8 @@ A Programming Engineer, a function title I made up myself 😉. It is a amalgama
 ## Technologies
 
 - Python
-- VisualBasic (for Applications) (Office Automation)
-- TypeScript
-- LabView
 - Git
-- Markdown
+- VisualBasic
 
 ## MaxQ Analytics
 Within the domain of Data Engineering and Business Intelligence I work with my colleagues at the [MaxQ analytics](https://www.maxqanalytics.io) team. Here we help businesses gaining insight into their data which leads to fact based decision making.
