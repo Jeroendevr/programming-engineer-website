@@ -1,3 +1,5 @@
 # Obsidian files
 docs/.*
-/site/
+
+# Site Dir must not be ignores as it is used directly for deployment
+#/site/
