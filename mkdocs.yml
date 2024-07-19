@@ -11,7 +11,11 @@ nav:
 theme:
   name: material
   language: en
+  favicon: img/favicon.ico
+  logo: assets/logo.webp
   custom_dir: overrides
+
+
   palette:
     # Palette for dark mode
     - scheme: slate
